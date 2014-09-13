@@ -4,7 +4,8 @@
 		<script type="text/javascript" src="p5.js"></script>
 		<script type="text/JavaScript">
 
-		var lineSpace = 35;
+		var lineSpace = 45;
+		var lineThick = 2;
 		var gBase = 80;
 		var g1 = gBase;
 		var colorChange = 10;
@@ -18,18 +19,18 @@
 				createCanvas(displayWidth, displayHeight);
 				bounceX = displayWidth/115;
 				bounceY = displayHeight/200;
-				colorMode(HSB, 100);
+				colorMode(HSB, displayWidth);
 				background(0,0,0);
 				noCursor();
 			}
 
 			function draw() {
-				background(0,0,0);
+				background(g1,displayWidth,centerY);
 
-				g1 = centerX/100;
+				g1 = centerX - 10;
 
 
-				stroke(g1, 100, 100);
+				stroke(g1, displayWidth, displayWidth);
 				//g1 = g1 + colorChange;
 				
 				/*
@@ -38,7 +39,7 @@
 				}
 				*/
 
-				strokeWeight(2);
+				strokeWeight(lineThick);
 
 				centerBounce();
 
