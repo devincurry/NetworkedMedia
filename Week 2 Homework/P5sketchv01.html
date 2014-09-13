@@ -5,6 +5,8 @@
 		<script type="text/JavaScript">
 
 		var lineSpace = 35;
+		var green = 10;
+		 var colorChange = 1;
 
 			function setup() {
 				createCanvas(displayWidth, displayHeight);
@@ -13,8 +15,22 @@
 
 			function draw() {
 				background(0,0,0);
-				stroke(0,255,0);
+				//stroke(0,255,0);
 				strokeWeight(2);
+
+				//green = green + colorChange;
+				
+
+				if (green > 255) {
+					green = 10;
+				} else {
+					green = green + colorChange;
+				}
+
+				stroke(0, green, 0);
+
+
+
 				
 				for (var x1 = 0; x1 <= displayWidth; x1 = x1 + lineSpace) {
 					line(x1, 0, mouseX, mouseY);
@@ -25,6 +41,10 @@
 					line(0, y1, mouseX, mouseY);
 					line(displayWidth, y1, mouseX, mouseY);
 				}
+
+			// function greenChange() {
+
+			// }
 
 			}
 
