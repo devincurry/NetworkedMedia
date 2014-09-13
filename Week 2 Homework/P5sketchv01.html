@@ -1,10 +1,10 @@
 <html>
 	<head>
-		<title>A JavaScript Test</title>
+		<title>LASERS ALL DAY</title>
 		<script type="text/javascript" src="p5.js"></script>
 		<script type="text/JavaScript">
 
-		var lineSpace = 45;
+		var lineSpace = 35;
 		var lineThick = 2;
 		var gBase = 80;
 		var g1 = gBase;
@@ -26,28 +26,20 @@
 
 			function draw() {
 				background(g1,displayWidth,centerY);
-
 				g1 = centerX - 10;
-
-
 				stroke(g1, displayWidth, displayWidth);
-				//g1 = g1 + colorChange;
-				
-				/*
-				if (g1 < gBase || g1 > 255) {
-					colorChange = colorChange * -1;
-				}
-				*/
-
 				strokeWeight(lineThick);
 
+				/*
+				// autonomous bouncing
 				centerBounce();
+				centerX = centerX + bounceX;
+				centerY = centerY + bounceY;
+				*/
 
-				 centerX = centerX + bounceX;
-				 centerY = centerY + bounceY;
-
-				// centerX = mouseX;
-				// centerY = mouseY;
+				//mouse controls
+				centerX = mouseX;
+				centerY = mouseY;
 				
 				for (var x1 = 0; x1 <= displayWidth; x1 = x1 + lineSpace) {
 					line(x1, 0, centerX, centerY);
