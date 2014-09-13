@@ -4,17 +4,34 @@
 		<script type="text/javascript" src="p5.js"></script>
 		<script type="text/JavaScript">
 
-			void setup() {
+		var lineSpace = 35;
+		var padding = 0;
 
+			function setup() {
+				createCanvas(displayWidth, displayHeight);
+				background(0,0,0);
 			}
 
-			void draw() {
+			function draw() {
+				background(0,0,0);
+				stroke(0,255,0);
+				strokeWeight(2);
+				padding = sin(frameCount / 10) * 50 + 50;
 				
+				for (var x1 = 0; x1 <= displayWidth; x1 = x1 + lineSpace) {
+					line(x1, 0, mouseX - padding, mouseY - padding);
+					line(x1, displayHeight, mouseX + padding, mouseY + padding);
+				}
+
+				for (var y1 = 0; y1 <= displayHeight; y1 = y1 + lineSpace) {
+					line(0, y1, mouseX - padding, mouseY - padding);
+					line(displayWidth, y1, mouseX + padding, mouseY + padding);
+				}
+
 			}
 
 		</script>
 	</head>
 	<body>
-		Nothing to see here
 	</body>
 </html>
