@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>LASERS ALL DAY</title>
+		<script type="text/javascript" src="p5.js"></script>
+		<script type="text/JavaScript">
+
+		var lineSpace = 35;
+		var lineThick = 2;
+		var gBase = 80;
+		var g1 = gBase;
+		var colorChange = 10;
+		var centerX = 0;
+		var centerY = 0;
+		var bounceX;
+		var bounceY;
+
+
+			function setup() {
+				createCanvas(displayWidth, displayHeight);
+				bounceX = displayWidth/115;
+				bounceY = displayHeight/200;
+				colorMode(HSB, displayWidth);
+				background(0,0,0);
+				noCursor();
+			}
+
+			function draw() {
+				background(g1,displayWidth,centerY);
+				g1 = centerX - 10;
+				stroke(g1, displayWidth, displayWidth);
+				strokeWeight(lineThick);
+
+				/*
+				// autonomous bouncing
+				centerBounce();
+				centerX = centerX + bounceX;
+				centerY = centerY + bounceY;
+				*/
+
+				//mouse controls
+				centerX = mouseX;
+				centerY = mouseY;
+				
+				for (var x1 = 0; x1 <= displayWidth; x1 = x1 + lineSpace) {
+					line(x1, 0, centerX, centerY);
+					line(x1, displayHeight, centerX, centerY);
+				}
+
+				for (var y1 = 0; y1 <= displayHeight; y1 = y1 + lineSpace) {
+					line(0, y1, centerX, centerY);
+					line(displayWidth, y1, centerX, centerY);
+				}
+			}
+
+			function centerBounce(){
+				if (centerX < 0 || centerX > displayWidth) {
+					bounceX = bounceX * -1;
+				}
+				if (centerY < 0 || centerY > displayHeight) {
+					bounceY = bounceY * -1;
+				}
+
+			}	
+			
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

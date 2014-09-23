@@ -1,0 +1,67 @@
+<html> 
+<head>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="960_12_col.css" />
+	<title>ITP Halloween Party</title>
+</head>
+<body>
+	<div class="container_12 clearfix" id="container">
+		<div class="grid_12" id="mydiv">ITP Halloween Party</div>			
+		<div class="grid_12">Saturday, October 25</div>	<br>	
+		<div class="grid_12">Keep it real hush hush.</div>
+	</div>	
+</body>
+
+<script type="text/JavaScript">
+
+window.addEventListener('event name', functionToRun);
+
+function functionToRun() {
+	// Code to execute
+}
+
+function init() {
+	var thediv = document.getElementById('mydiv');
+	alert(thediv.innerHTML);
+}				
+window.addEventListener('load', init);	
+
+var thediv;
+var containerDiv;
+
+function init() {
+	thediv = document.getElementById('mydiv');
+
+	thediv.addEventListener('mouseover', hideit);
+	thediv.addEventListener('mouseover', fontOrange);
+
+
+	thediv.addEventListener('mouseout', showIt);
+	thediv.addEventListener('mouseout', fontWhite);
+
+	containerDiv = document.getElementById('container');
+	thediv.addEventListener('click', fontOrange);	
+}			
+
+function hideit() {
+	thediv.style.visibility = "hidden";
+}
+
+function showIt() {
+	thediv.style.visibility = "visible";
+}
+
+function fontOrange(){
+	containerDiv.style.color = "Orange";
+	//containerDiv.style.fontFamily = "Verdana";
+}
+
+function fontWhite(){
+	containerDiv.style.color = "White";
+}
+
+window.addEventListener('load', init);
+
+</script>
+
+</html>

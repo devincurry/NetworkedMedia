@@ -1,0 +1,44 @@
+<html> 
+<head>
+	<title>TITLE GOES HERE</title>
+	<script type="text/javascript" src="p5.js"></script>
+	<script type="text/javascript" src="p5.dom.js"></script>
+	<script type="text/JavaScript">
+
+
+	var textDiv;
+	var x = 100;
+	var y = 100;
+
+	function setup() {
+		createCanvas(200,200);
+		textSize(36);
+		textFont("Helvetica");
+		textDiv = createDiv("Here is something");
+		textDiv.position(100,100);
+	}
+
+	function draw() {
+		if (mouseX < displayWidth/2){
+			if (mouseY < displayHeight/2) {
+				textDiv.position(x,y);
+				x = x + random(-2,2);
+				y = y + random(-2,2);
+			} else {
+				x = 200;
+				y = 200;
+			}
+		}
+	}
+
+		</script>
+
+<!--
+<div class="container_12 clearfix">
+	<div class="grid_12">All 12 Columns</div>			
+	<div class="grid_4">4 Columns</div>	<br>	
+	<div class="grid_4">3 Columns</div>
+</div>	
+-->
+</head>
+</html>

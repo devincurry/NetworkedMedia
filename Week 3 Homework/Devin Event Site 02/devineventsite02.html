@@ -1,0 +1,85 @@
+<html> 
+<head>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="960_12_col.css" />
+	<script type="text/javascript" src="p5.js"></script>
+	<script type="text/JavaScript">
+
+	var textDiv;
+	var x = 100;
+	var y = 100;
+
+	function setup() {
+		createCanvas(200,200);
+
+		textSize(48);
+		textFont("Helvetica");
+		text("Helvetica", 12, 90);
+
+		textDiv = createDiv("Here is something");
+		textDiv.position(100,100);
+
+	}
+
+	function draw() {
+		
+
+		textSize(32);
+		text("word", 10, 30); 
+		fill(0, 102, 153);
+		text("word", 10, 60);
+		fill(0, 102, 153, 51);
+		text("word", 10, 90);
+
+		textDiv.position(x,y);
+		x = x + random(-2,2);
+		y = y + random(-2,2);
+	}		
+
+	var thediv;
+	function init() {
+		thediv = document.getElementById('mydiv');
+		thediv.addEventListener('mouseover', hideit);
+	}			
+
+	function hideit() {
+		thediv.style.visibility = "hidden";
+	}	
+	window.addEventListener('load', init);	
+/*
+	element.addEventListener('event name', functionToRun);
+
+functionToRun() {
+	// Code to execute
+}
+
+function init() {
+	var thediv = document.getElementById('mydiv');
+	alert(thediv.innerHTML);
+}				
+window.addEventListener('load', init);	
+
+var thediv;
+function init() {
+	thediv = document.getElementById('mydiv');
+	thediv.addEventListener('mouseover', hideit);
+}			
+
+function hideit() {
+	thediv.style.visibility = "hidden";
+}	
+window.addEventListener('load', init);
+*/
+
+</script>
+
+<title>ITP Halloween Party</title>
+<!--
+<div class="container_12 clearfix">
+	<div class="grid_12">All 12 Columns</div>			
+	<div class="grid_4">4 Columns</div>	<br>	
+	<div class="grid_4">3 Columns</div>
+</div>	
+-->
+</head>
+</html>

@@ -1,0 +1,28 @@
+head {
+	font-family: "Helvetica";
+}
+
+body {
+    background-color: black;
+    color: white;
+        font-family: "Helvetica";
+
+}
+
+h1 {
+   color: orange;
+    text-align: center;
+        font-family: "Helvetica";
+
+}
+
+p {
+    font-family: "Helvetica";
+    font-size: 20px;
+}
+
+div {
+	font-family: "Helvetica";
+    font-size: 48px;
+    font-weight: bold;
+}

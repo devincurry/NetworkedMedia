@@ -1,0 +1,27 @@
+head {
+	font-family: "Helvetica";
+}
+
+body {
+    //background-color: #d0e4fe;
+        font-family: "Helvetica";
+
+}
+
+h1 {
+   color: orange;
+    text-align: center;
+        font-family: "Helvetica";
+
+}
+
+p {
+    font-family: "Helvetica";
+    font-size: 20px;
+}
+
+div {
+	font-family: "Helvetica";
+    font-size: 48px;
+    font-weight: bold;
+}

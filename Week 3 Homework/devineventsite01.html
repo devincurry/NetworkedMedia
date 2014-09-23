@@ -1,0 +1,51 @@
+<html> 
+<head>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="960_12_col.css" />
+	<title>ITP Halloween Party</title>
+</head>
+<body>
+	<div class="container_12 clearfix" id="container">
+		<div class="grid_12" id="mydiv">ITP Halloween Party</div>			
+		<div class="grid_4">4 Columns</div>	<br>	
+		<div class="grid_4">3 Columns</div>
+	</div>	
+</body>
+
+<script type="text/JavaScript">
+
+window.addEventListener('event name', functionToRun);
+
+function functionToRun() {
+	// Code to execute
+}
+
+function init() {
+	var thediv = document.getElementById('mydiv');
+	alert(thediv.innerHTML);
+}				
+window.addEventListener('load', init);	
+
+var thediv;
+var containerDiv;
+
+function init() {
+	thediv = document.getElementById('mydiv');
+	//thediv.addEventListener('mouseover', hideit);
+
+	containerDiv = document.getElementById('container');
+	thediv.addEventListener('click', changeFont);	
+}			
+
+function hideit() {
+	thediv.style.visibility = "hidden";
+}
+
+function changeFont(){
+	containerDiv.style.fontFamily = "serif!important";
+}	
+window.addEventListener('load', init);
+
+</script>
+
+</html>
