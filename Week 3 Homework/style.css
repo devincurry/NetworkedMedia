@@ -5,14 +5,14 @@ head {
 body {
     background-color: black;
     color: white;
-        font-family: "Helvetica";
+    font-family: "Helvetica";
 
 }
 
 h1 {
    color: orange;
     text-align: center;
-        font-family: "Helvetica";
+    font-family: "Helvetica";
 
 }
 
@@ -26,3 +26,13 @@ div {
     font-size: 48px;
     font-weight: bold;
 }
+
+#secretText{
+    color: black;
+
+}
+
+.grid_7{
+    color: white;
+}
+
