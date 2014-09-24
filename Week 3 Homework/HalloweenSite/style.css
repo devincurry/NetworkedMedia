@@ -26,6 +26,11 @@ div {
 	font-family: "Helvetica";
 }
 
+#mydiv{
+    font-size: 54px;
+    font-weight: bolder;
+    color: orange;
+}
 #container{
     font-size: 48px;
     font-weight: bold;
@@ -63,13 +68,14 @@ div {
 
 #rena1{
     font-size: 32px;
-    font-weight: normal;
+    font-weight: lighter;
     color: white;
 }
 
 #rena2{
     font-size: 0px;
     font-weight: bold;
+    font-family: "Comic Sans MS";
     color: orange;
     visibility: visible;
 }
@@ -77,7 +83,7 @@ div {
 
 #jason1{
     font-size: 32px;
-    font-weight: normal;
+    font-weight: lighter;
     color: white;
 }
 
@@ -85,13 +91,14 @@ div {
     font-size: 0px;
     font-weight: bold;
     color: orange;
+    font-family: "Comic Sans MS";
     visibility: visible;
 }
 
 
 #kyle1{
     font-size: 32px;
-    font-weight: normal;
+    font-weight: lighter;
     color: white;
 }
 
@@ -99,13 +106,14 @@ div {
     font-size: 0px;
     font-weight: bold;
     color: orange;
+    font-family: "Comic Sans MS";
     visibility: visible;
 }
 
 
 #devin1{
     font-size: 32px;
-    font-weight: normal;
+    font-weight: lighter;
     color: white;
 }
 
@@ -113,13 +121,14 @@ div {
     font-size: 0px;
     font-weight: bold;
     color: orange;
+    font-family: "Comic Sans MS";
     visibility: visible;
 }
 
 
 #tba1{
     font-size: 32px;
-    font-weight: normal;
+    font-weight: lighter;
     color: white;
 }
 
@@ -127,6 +136,7 @@ div {
     font-size: 0px;
     font-weight: bold;
     color: red;
+    font-family: "Comic Sans MS";
     visibility: visible;
 }
 
