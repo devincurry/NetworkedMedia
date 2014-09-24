@@ -37,6 +37,7 @@ window.addEventListener('load', init);
 var thediv;
 var containerDiv;
 var secretDiv;
+var randomSize = random (36, 64);
 
 function init() {
 	thediv = document.getElementById('mydiv');
@@ -80,6 +81,7 @@ function hideSecret(){
 
 function showSecret(){
 	secretDiv.style.color = "Red";
+	secretDiv.style.fontSize = "72";
 }
 
 window.addEventListener('load', init);

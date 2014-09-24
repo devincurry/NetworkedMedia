@@ -23,23 +23,11 @@ p {
 
 div {
 	font-family: "Helvetica";
-}
-
-#container{
     font-size: 48px;
     font-weight: bold;
-    color: white;
-}
-
-#regtext{
-    font-size: 48px;
-    font-weight: normal;
-    color: white;
 }
 
 #secretText{
-    font-size: 48px;
-    font-weight: bold;
     color: black;
 
 }
