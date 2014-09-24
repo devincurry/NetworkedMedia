@@ -1,0 +1,217 @@
+<html> 
+<head>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="960_12_col.css" />
+	<title>ITP Halloween Party</title>
+</head>
+<body>
+</br>
+<div class="container_12 clearfix" id="container">
+	<div class="grid_12" id="mydiv">ITP Halloween Party</div>			
+	<div class="grid_12">Saturday, October 25</div>	
+	<div class="grid_12">Attendance is mandatory.</div>
+</div>
+<div class="container_12 clearfix" id="secretText">
+	<div class="grid_6">HAUNTED</div>
+</div>
+<div class="container_12 clearfix" id="regText">
+	<div class="grid_12">4th Floor</div>
+	<div class="grid_12">10:00PM</div>
+	<div class="grid_3">Snacks</div>
+	<div class="grid_9" id="boozeText"> and BYOB!!!</div>
+</div>
+</br>
+</br>
+<div class="container_12 clearfix" id="djList">
+	<div class="grid_12" = id="djheading">SCARY good DJ Lineup:</div>
+	<div class="grid_6" = id="rena1">DJ Ladylane</div>
+	<div class="grid_6" = id="rena2">RENA ANAKWE</div>
+	<div class="grid_6" = id="jason1">DJ Jason Sigal</div>
+	<div class="grid_6" = id="jason2">THE REAL JASON SIGAL</div>
+	<div class="grid_6" = id="kyle1">DJ Greenbeard</div>
+	<div class="grid_6" = id="kyle2">KYLE GREENBERG</div>
+	<div class="grid_6" = id="devin1">Grand Atrium</div>
+	<div class="grid_6" = id="devin2">DEVIN CURRY</div>
+	<div class="grid_6" = id="tba1">& TBA First Years.</div>
+	<div class="grid_6" = id="tba2">SPIN OR DIE, FRESHMEAT!</div>
+
+</div>	
+</body>
+
+<script type="text/JavaScript">
+
+window.addEventListener('event name', functionToRun);
+
+function functionToRun() {
+	// Code to execute
+}
+
+function init() {
+	var thediv = document.getElementById('mydiv');
+	alert(thediv.innerHTML);
+}				
+window.addEventListener('load', init);
+
+var thediv;
+var containerDiv;
+var secretDiv;
+var boozeDiv;
+var rena1Div;
+var rena2Div;
+
+function init() {
+	thediv = document.getElementById('mydiv');
+	secretDiv = document.getElementById('secretText');
+	boozeDiv = document.getElementById('boozeText');
+	rena1Div = document.getElementById('rena1');
+	rena2Div = document.getElementById('rena2');
+	jason1Div = document.getElementById('jason1');
+	jason2Div = document.getElementById('jason2');
+	kyle1Div = document.getElementById('kyle1');
+	kyle2Div = document.getElementById('kyle2');
+	devin1Div = document.getElementById('devin1');
+	devin2Div = document.getElementById('devin2');
+	tba1Div = document.getElementById('tba1');
+	tba2Div = document.getElementById('tba2');
+
+	thediv.addEventListener('mouseover', hideit);
+	thediv.addEventListener('mouseover', fontOrange);
+
+	thediv.addEventListener('mouseout', showIt);
+	thediv.addEventListener('mouseout', fontWhite);
+
+	secretDiv.addEventListener('mouseover', showSecret);
+	secretDiv.addEventListener('mouseout', hideSecret);
+
+	containerDiv = document.getElementById('container');
+	thediv.addEventListener('click', fontOrange);	
+
+	boozeDiv.addEventListener('mouseover', showBooze);
+
+	rena1Div.addEventListener('mouseover', showRena);
+	rena1Div.addEventListener('mouseout', hideRena);
+
+	jason1Div.addEventListener('mouseover', showJason);
+	jason1Div.addEventListener('mouseout', hideJason);
+
+	kyle1Div.addEventListener('mouseover', showKyle);
+	kyle1Div.addEventListener('mouseout', hideKyle);
+
+	devin1Div.addEventListener('mouseover', showDevin);
+	devin1Div.addEventListener('mouseout', hideDevin);
+
+	tba1Div.addEventListener('mouseover', showtba);
+	tba1Div.addEventListener('mouseout', hidetba);
+
+
+	//secretDiv = document.getElementById('secretText')
+}			
+
+function hideit() {
+	thediv.style.visibility = "hidden";
+}
+
+function showIt() {
+	thediv.style.visibility = "visible";
+}
+
+function fontOrange(){
+	containerDiv.style.color = "Orange";
+	//containerDiv.style.fontFamily = "Verdana";
+}
+
+function fontWhite(){
+	containerDiv.style.color = "White";
+}
+
+function hideSecret(){
+	secretDiv.style.color = "Black";
+	secretDiv.style.fontSize = "36";
+}
+
+function showSecret(){
+	secretDiv.style.color = "Red";
+	secretDiv.style.fontSize = "72";
+}
+
+function showBooze(){
+	boozeDiv.style.color = "Yellow";
+	//boozeDiv.style.fontSize = "100";
+	secretDiv.style.fontFamily = "ComicSansMS";
+	//boozeDiv.style.fontWeight = "Bold";
+}
+
+setInterval(function() {flashTimer()}, 10);
+
+function flash(){
+
+}
+
+function showRena(){
+	//rena2Div.style.color = "Red";
+	//rena2Div.style.visibility = "visible";
+	rena1Div.style.fontSize = "0";
+	rena2Div.style.fontSize = "32";
+}
+
+function hideRena(){
+	//rena2Div.style.color = "Black";
+	//rena2Div.style.visibility = "hidden";
+	rena2Div.style.fontSize = "0";
+	rena1Div.style.fontSize = "32";
+}
+
+function showJason(){
+	jason1Div.style.fontSize = "0";
+	jason2Div.style.fontSize = "32";
+}
+
+function hideJason(){
+	jason2Div.style.fontSize = "0";
+	jason1Div.style.fontSize = "32";
+}
+
+function showKyle(){
+	kyle1Div.style.fontSize = "0";
+	kyle2Div.style.fontSize = "32";
+}
+
+function hideKyle(){
+	kyle2Div.style.fontSize = "0";
+	kyle1Div.style.fontSize = "32";
+}
+
+function showDevin(){
+	devin1Div.style.fontSize = "0";
+	devin2Div.style.fontSize = "32";
+}
+
+function hideDevin(){
+	devin2Div.style.fontSize = "0";
+	devin1Div.style.fontSize = "32";
+}
+
+function showtba(){
+	tba1Div.style.fontSize = "0";
+	tba2Div.style.fontSize = "32";
+}
+
+function hidetba(){
+	tba2Div.style.fontSize = "0";
+	tba1Div.style.fontSize = "32";
+}
+
+/*
+var flashing = setInterval(function () {flashTimer()}, 10);
+
+
+function flashTimer() {
+    var t = new timer();
+    document.getElementById("flash").innerHTML = t.toLocaleTimeString();
+}
+*/
+window.addEventListener('load', init);
+
+</script>
+
+</html>
