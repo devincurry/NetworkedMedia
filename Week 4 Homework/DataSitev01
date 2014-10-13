@@ -1,0 +1,62 @@
+<html> 
+<head>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="960_12_col.css" />
+	<title>Data Shit</title>
+</head>
+<body>
+</br>
+<div class="container_12 clearfix" id="container">
+	<div class="grid_12" id="mydiv">ITP HALLOWEEN PARTY</div>			
+	<div class="grid_12">Saturday, October 25</div>	
+
+</div>
+</>
+<div class="container_12 clearfix" id="secretText">
+	<div class="grid_6">HAUNTED</div>
+</div>
+<div class="container_12 clearfix" id="regText">
+	<div class="grid_12">4th Floor</div>
+
+</div>
+</br>
+</br>
+</br>
+<div class="container_12 clearfix" id="djList">
+	<div class="grid_12" = id="djheading">SCARY good DJ lineup:</div>
+
+</div>	
+</body>
+
+<script type="text/JavaScript">
+
+window.addEventListener('event name', functionToRun);
+
+function functionToRun() {
+	// Code to execute
+}
+			
+
+var thediv;
+
+var theBody;
+
+function init() {
+	thediv = document.getElementById('mydiv');
+
+	theBody = document.body;
+
+	//theBody.style.backgroundColor = "#ff00aa";
+	//theBody.style.backgroundColor = "rgb(255,0,110)";
+	setInterval(changeBG,100);
+
+	thediv.addEventListener('mouseover', hideit);
+
+}			
+
+
+window.addEventListener('load', init);
+
+</script>
+
+</html>

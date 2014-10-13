@@ -1,0 +1,40 @@
+<script src="jquery-2.1.1.js"></script>
+<script type="text/javascript">
+
+		var theObject = {
+
+		};
+			
+		//console.log("Temperature is: " + theObject.main.temp);
+		//console.log("Humidity is: " + theObject.main.humidity);
+
+// this is the user inputted variable for zip code 
+var zipCode = "11211";
+
+	$(document).ready(function(){
+		$.ajax({
+		  url: "https://api.enigma.io/v2/data/12ea3e7408ca2b492726cc6b7f219d62/us.states.ny.sla.active-licenses",
+		  dataType: 'json',
+		  success: function(data) {
+		  	console.log(data.result[0]);
+
+		  	for (var i = 0; i < data.result.length; i++ ) {
+		  		if (data.result[i].zip === zipCode && data.result[i].license_type_name === "ON PREMISES LIQUOR") {
+		  			console.log(data.result[i].premises_name);
+		  			console.log(data.result[i].actual_address_of_premises_address1);
+		  			console.log(data.result[i].city);
+		  			console.log('data.result[i].city:', data.result[i].city);
+		  			//console.log('data.result[i].license_type_name:', data.result[i].license_type_name);
+
+		  		}
+		  	}
+
+			//alert("Temperature is: " + data.main.temp );
+		 
+		 },
+		  		  error: function() {
+			alert("error");
+		  }
+		});        
+	});
+</script>

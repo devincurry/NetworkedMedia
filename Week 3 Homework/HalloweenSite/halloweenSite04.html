@@ -47,12 +47,7 @@ window.addEventListener('event name', functionToRun);
 function functionToRun() {
 	// Code to execute
 }
-
-function init() {
-	var thediv = document.getElementById('mydiv');
-	alert(thediv.innerHTML);
-}				
-window.addEventListener('load', init);
+			
 
 var thediv;
 var containerDiv;
@@ -60,6 +55,7 @@ var secretDiv;
 var boozeDiv;
 var rena1Div;
 var rena2Div;
+var theBody;
 
 function init() {
 	thediv = document.getElementById('mydiv');
@@ -75,6 +71,11 @@ function init() {
 	devin2Div = document.getElementById('devin2');
 	tba1Div = document.getElementById('tba1');
 	tba2Div = document.getElementById('tba2');
+	theBody = document.body;
+
+	//theBody.style.backgroundColor = "#ff00aa";
+	//theBody.style.backgroundColor = "rgb(255,0,110)";
+	setInterval(changeBG,100);
 
 	thediv.addEventListener('mouseover', hideit);
 	thediv.addEventListener('mouseover', fontOrange);
@@ -192,6 +193,10 @@ function showtba(){
 function hidetba(){
 	tba2Div.style.fontSize = "0";
 	tba1Div.style.fontSize = "32";
+}
+
+function changeBG(){
+	theBody.style.backgroundColor = "rgb(" + Math.floor(Math.random()*255) + ", " + Math.floor(Math.random()*255) + ", " + Math.floor(Math.random()*255) + ")"; //Math.floor turns a float into an int
 }
 
 window.addEventListener('load', init);

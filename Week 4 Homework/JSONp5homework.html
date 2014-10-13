@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>FIND A BAR NOW!</title>
+	<script type="text/javascript" src="p5.js"></script>
+	<script type="text/JavaScript">
+
+var theObject;
+var zipCode = 11211;
+	
+	// console.log("Temperature is: " + theObject.main.temp);
+
+	function setup() {
+		colorMode(HSB, 100, 100, 100);
+		createCanvas(800,800);
+		background(0,0,0);
+		fill(0,0,100);
+		textFont("Helvetica");
+		textSize(64);
+		textAlign(CENTER);
+		loadJSON("https://api.enigma.io/v2/data/12ea3e7408ca2b492726cc6b7f219d62/us.states.ny.sla.active-licenses/search/11211/select/premises_name,city/",jsonLoaded);
+	}
+
+	function draw() {
+		fill(0,0,100);
+				//noStroke();
+		textFont("Helvetica");
+		textSize(64);
+		//text("Hello world", 100, 100);
+		//text("Temperature is: "  + theObject.main.temp, 100, 300);
+		for (var i = 0; i < data.result.length; i++ ) {
+	  		if (data.result[i].zip == zipCode && data.result[i].license_type_name == "ON-PREMISES LIQUOR") {
+	  			console.log(data.result[i].premises_name);
+	  			console.log(data.result[i].actual_address_of_premises_address1);
+	  			//console.log(data.result[i].city);
+	  			console.log('data.result[i].city:', data.result[i].city);
+	  			//console.log('data.result[i].license_type_name:', data.result[i].license_type_name);
+			}
+		}
+
+	//function jsonLoaded(theObject) {
+		  	//console.log(data.result[0]);
+		//text("Temperature is: "  + theObject.main.temp, 100, 300);
+
+	//}

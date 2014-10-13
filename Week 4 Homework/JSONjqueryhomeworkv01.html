@@ -1,0 +1,63 @@
+<script src="jquery-2.1.1.js"></script>
+<script type="text/javascript">
+
+		var theObject = {
+		   "coord":{
+			  "lon":-74.005966,
+			  "lat":40.714272
+		   },
+		   "sys":{
+			  "country":"US",
+			  "sunrise":1380106043,
+			  "sunset":1380149242
+		   },
+		   "weather":[
+			  {
+				 "id":800,
+				 "main":"Clear",
+				 "description":"Sky is Clear",
+				 "icon":"01n"
+			  }
+		   ],
+		   "base":"gdps stations",
+		   "main":{
+			  "temp":60.44,
+			  "pressure":1013,
+			  "temp_min":54,
+			  "temp_max":66.2,
+			  "humidity":88
+		   },
+		   "wind":{
+			  "speed":2.22,
+			  "gust":3.08,
+			  "deg":285
+		   },
+		   "rain":{
+			  "3h":0
+		   },
+		   "clouds":{
+			  "all":0
+		   },
+		   "dt":1380076310,
+		   "id":5128581,
+		   "name":"New York",
+		   "cod":200
+		};
+			
+		console.log("Temperature is: " + theObject.main.temp);
+		console.log("Humidity is: " + theObject.main.humidity);
+
+
+	$(document).ready(function(){
+		$.ajax({
+		  url: "http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial",
+		  dataType: 'json',
+		  success: function(data) {
+			alert("Temperature is: " + data.main.temp );
+		  },
+		  error: function() {
+			alert("error");
+		  }
+		});        
+	});
+</script>

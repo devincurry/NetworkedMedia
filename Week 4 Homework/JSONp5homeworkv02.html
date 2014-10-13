@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>JSON Example</title>
+	<script type="text/javascript" src="p5.js"></script>
+	<script type="text/JavaScript">
+
+var theObject;
+	
+	// console.log("Temperature is: " + theObject.main.temp);
+
+	function setup() {
+		colorMode(HSB, 100, 100, 100);
+		createCanvas(800,800);
+		background(0,0,0);
+		fill(0,0,0);
+		textFont("Helvetica");
+		textSize(24);
+		//loadJSON("http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial",jsonLoaded);
+		// text("Temperature is: "  + theObject.main.temp, 100, 100);
+		//loadJSON("http://coinabul.com/api.php",jsonLoaded);
+		loadJSON("http://www.myapifilms.com/search?title=Airplane!&format=JSON",jsonLoaded);
+	}
+
+	function draw() {
+		fill(0,0,100);
+		textFont("Helvetica");
+		textSize(24);
+		text("Hello world", 100, 100);
+		//text("Temperature is: "  + theObject.main.temp, 100, 300);
+
+}
+
+	function jsonLoaded(theObject) {
+		//console.log("Temperature is: " + theObject.main.temp);  
+		//text("Temperature is: "  + theObject.main.temp, 100, 300);
+		//console.log("theObject.main.temp");
+		//console.log('Current value in USD: ' + json.BTC[0].USD);
+		console.log('IMDb Rating: ' + json.rating);
+	}
+
+	
+
+	</script>
+</head>
+</html>

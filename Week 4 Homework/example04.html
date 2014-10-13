@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>AJAX Example</title>
+		<!-- Load up the AJAX External JavaScript file -->
+		<script type="text/javascript" src="p5.js"></script>
+
+		<!-- Local Javascript Functions and so on -->
+		<script type="text/javascript">
+
+			// A variable to hold the interval id
+			var interval = null;	
+	
+			// A function to call our AJAX PHP script
+			function call_ajax()
+			{
+				loadStrings('ajax_example.txt',ajax_return);
+			}
+
+			// A function that gets called when ajax returns
+			function ajax_return(response)
+			{
+				document.getElementById("messages").innerHTML = response;
+			}
+	
+			// Setup AJAX function, creates a timeout so that we run something periodically
+			function setup_ajax()
+			{				
+				// Set interval of 5000 milliseconds
+				// Keeps going...
+				interval = setInterval(call_ajax,5000);
+
+				// Only happens once..
+				//interval = setTimeout(call_ajax,5000);
+			}			
+		
+			// Register setup_ajax with the onload event of the window (when it is done loading)..	
+			window.addEventListener('load', setup_ajax);
+
+		</script>
+	</head>
+	<body>
+		<b>Looky here!</b>
+		<div id="messages" style="overflow: auto; width: 500px; height: 400px;">
+			Something should pop up here..
+		</div>
+	</body>
+</html>

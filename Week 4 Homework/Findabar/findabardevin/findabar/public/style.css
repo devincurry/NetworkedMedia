@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    font-family: "ComicSansMS";
+    text-align: center;
+}
+
+a {
+    color: magenta;
+}
+
+a:hover {
+    /*color: white;*/
+    font-weight: bolder;
+    text-shadow: 0px 0px 10px violet;
+}
+
+#enterzip {
+    font-size: 40px;
+}

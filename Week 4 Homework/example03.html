@@ -1,0 +1,22 @@
+	<html>
+		<head>
+			<title>Button Function</title>
+			<script type="text/javascript">	
+				function buttonPushed()
+				{
+					document.write("Why did you do that?");
+				}
+				
+				function init() {
+					document.getElementById('abutton').addEventListener('click', buttonPushed);
+				}
+				
+				window.addEventListener('load', init);
+			</script>
+		</head>
+		<body>
+			<form>
+				<input type="button" name="abutton" id="abutton" value="Do NOT Push Me" />
+			</form>
+		</body>
+	</html>
