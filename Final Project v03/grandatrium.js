@@ -10,7 +10,14 @@ var gap = 1;
 var breatheRate = .3;
 var gapMax = 10; //(mouseX/(division*5)
 var isPink = true;
+
+var newsOn = false;
 var playerOn = false;
+var bioOn = false;
+
+var newsDiv;
+var bioDiv;
+var soundcloudDiv;
 
 var bioPt1 = "Eclectic electronic producer Grand Atrium grew up as Devin Curry, tucked neatly in the canyons just outside LA where he could properly marinate in synths. As a teen, he began tinkering with his first analog synthesizer between indulging in kung fu films and video games. He continued to work on audio art on the West Coast for years. Now Curry lays his head and Moog in Brooklyn, primarily focusing on using vintage drum machines and synthesizers in his sensory-engaging, personal electronic music."
 var bioPt2 = "The artist has stitched together official remixes for artists like Taken By Trees, Memoryy and others. His remix of Heartrevolution’s 'Pop Heart' also appeared on a compilation for Maison Kitsune Records, Kitsune America 2.";
@@ -129,20 +136,6 @@ function writeAbout() {
 	text("ABOUT", size*5.3, size*2/3);
 }
 
-function writeTextOld2() {
-	noStroke();
-	strokeWeight(2);
-	textSize(96);
-	textStyle(BOLD);
-	fill(0,0,100);
-	text("GRAND ATRIUM", size/2, size*2/3); 
-	textSize(48);
-	textStyle(NORMAL);
-	text("HOME", size/2, size*1.5);
-	text("MUSIC", size, size*2);
-	text("ABOUT", size*1.5, size*2.5);
-}
-
 function checkHue() {
 	if (isPink) {
       h = 90;
@@ -153,15 +146,24 @@ function checkHue() {
     }
 }
 
+function writeNews() {
+	newsDiv = createDiv("Upcoming Shows:");
+	//newsDiv.parent('news');
+	newsDiv.position(size+division*2,size+division*3);
+	newsOn = !newsOn;
+}
+
 function writeBio() {
-	var bioDiv = createDiv("Eclectic electronic producer Grand Atrium grew up as Devin Curry, tucked neatly in the canyons just outside LA where he could properly marinate in synths. As a teen, he began tinkering with his first analog synthesizer between indulging in kung fu films and video games. He continued to work on audio art on the West Coast for years. Now Curry lays his head and Moog in Brooklyn, primarily focusing on using vintage drum machines and synthesizers in his sensory-engaging, personal electronic music.</p>The artist has stitched together official remixes for artists like Taken By Trees, Memoryy and others. His remix of Heartrevolution's \"Pop Heart\" also appeared on a compilation for Maison Kitsune Records, Kitsune America 2.");
+	bioDiv = createDiv("Eclectic electronic producer Grand Atrium grew up as Devin Curry, tucked neatly in the canyons just outside LA where he could properly marinate in synths. As a teen, he began tinkering with his first analog synthesizer between indulging in kung fu films and video games. He continued to work on audio art on the West Coast for years. Now Curry lays his head and Moog in Brooklyn, primarily focusing on using vintage drum machines and synthesizers in his sensory-engaging, personal electronic music.</p>The artist has stitched together official remixes for artists like Taken By Trees, Memoryy and others. His remix of Heartrevolution's \"Pop Heart\" also appeared on a compilation for Maison Kitsune Records, Kitsune America 2.");
 	bioDiv.parent('bio');
 	bioDiv.position(size+division*2,size+division*3);
+	bioOn = !newsOn;
 }
 
 function soundcloud() {
-	var soundcloudDiv = createDiv("<iframe width=\"100%\" height=\"450\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/49426745&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\"></iframe>");
+	soundcloudDiv = createDiv("<iframe width=\"100%\" height=\"450\" scrolling=\"no\" frameborder=\"no\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/49426745&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\"></iframe>");
 	soundcloudDiv.position(displayWidth/division+division,displayWidth/division+division);
+	playerOn = true;
 }
 
 function mouseClicked() {
@@ -176,15 +178,40 @@ function mouseClicked() {
 
 	if (mouseY >= buttonYmin && mouseY <= buttonYmax){
 		if (mouseX >= homeXmin && mouseX < homeXmax){ //home
-			//remove();
-			writeBio();
+			if (playerOn){
+				soundcloudDiv.hide();
+			}
+			if (bioOn){
+				bioDiv.hide();
+				bioOn = !bioOn;
+			}
+			writeNews();
 		}
 		if (mouseX >= musicXmin && mouseX < musicXmax){ //music
-			draw();
-			soundcloud();
+			if (newsOn){
+				newsDiv.hide();
+				newsOn = !newsOn;
+			}
+			if (bioOn){
+				bioDiv.hide();
+				bioOn = !bioOn;
+			}
+
+			if (!playerOn){
+				soundcloud();
+				//playerOn = !playerOn;
+			} else {
+				soundcloudDiv.show();
+			}
 		}
-		if (mouseX >= aboutXmin && mouseX < aboutXmax){
-			draw();
+		if (mouseX >= aboutXmin && mouseX < aboutXmax){ //about
+			if (newsOn){
+				newsDiv.hide();
+				newsOn = !newsOn;
+			}
+			if (playerOn) {
+				soundcloudDiv.hide();
+			}
 			writeBio();
 		}
 	}
