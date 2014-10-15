@@ -123,7 +123,15 @@ function writeMusic() {
 function writeAbout() {
 	noStroke();
 	textSize(size/8);
-	textStyle(NORMAL);
+	var buttonXmin = size*5;
+	var buttonXmax = size*6;
+	var buttonYmin = size/2;
+	var buttonYmax = buttonYmin + size/4;
+	if (mouseX >= buttonXmin && mouseX < buttonXmax && mouseY >= buttonYmin && mouseY <= buttonYmax) {
+		textStyle(BOLD);
+	} else {
+		textStyle(NORMAL);
+	}
 	fill(0,0,100);
 	text("ABOUT", size*5.3, size*2/3);
 }
@@ -178,13 +186,48 @@ function soundcloud() {
 	soundcloudDiv.position(displayWidth/division+division,displayWidth/division+division);
 }
 
+// function mouseClicked() {
+// 	var homeXmin = size*3;
+// 	var homeXmax = size*4;
+// 	var Ymin = size/2;
+// 	var Ymax = Ymin + size/4;
+// 	if (mouseX >= homeXmin && mouseX <= homeXmax && mouseY >= Ymin && mouseY <= Ymax){
+// 		draw();
+// 		writeBio();
+// 	}
+// }
+
 function mouseClicked() {
+	var buttonYmin = size/2;
+	var buttonYmax = buttonYmin + size/4;
 	var homeXmin = size*3;
 	var homeXmax = size*4;
-	var homeYmin = size/2;
-	var homeYmax = homeYmin + size/4;
-	if (mouseX >= homeXmin && mouseX <= homeXmax && mouseY >= homeYmin && mouseY <= homeYmax){
+	var musicXmin = size*4;
+	var musicXmax = size*5;
+	// if (mouseY >= buttonYmin && mouseY <= buttonYmax && mouseX >= homeXmin && mouseX < homeXmax){
+	// 	//draw();
+	// 	writeBio();
+	// }
+	if (mouseX >= homeXmin && mouseX <= homeXmax && mouseY >= buttonYmin && mouseY <= buttonYmax){
 		draw();
 		writeBio();
 	}
+	// if (mouseY >= buttonYmin && mouseY <= buttonYmax && mouseX >= musicXmin && mouseX < musicXmax){
+	// 	draw();
+	// 	soundcloud();
+	// }
+
+	
+	if (mouseY >= buttonYmin && mouseY <= buttonYmax){
+		if (mouseX >= homeXmin && mouseX < homeXmax){
+			draw();
+			writeBio();
+		}
+		if (mouseX >= musicXmin && mouseX < musicXmax){
+			draw();
+			soundcloud();
+		}
+	}
+	
 }
+
